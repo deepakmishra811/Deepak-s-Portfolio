@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deepak Kumar Mishra — Senior QS &amp; Commercial Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #eef1f4;
+    --ink-dim: #aab4c0;
+    --bg: #0e1620;
+    --bg-raised: #131e2b;
+    --bg-paper: #f6f4ee;
+    --paper-ink: #16212c;
+    --paper-dim: #5a6472;
+    --gold: #c79a4b;
+    --gold-dim: #8a6b34;
+    --line: #263242;
+    --line-paper: #ddd6c4;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+  .rule { border: none; border-top: 1px solid var(--line); margin: 0; }
+
+  /* ---- Nav ---- */
+  nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(14,22,32,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { font-family: var(--serif); font-size: 17px; font-weight: 600; letter-spacing: 0.2px; }
+  .brand span { color: var(--gold); }
+  nav .links { display: flex; gap: 22px; font-size: 13.5px; color: var(--ink-dim); }
+  nav .links a { text-decoration: none; }
+  nav .links a:hover { color: var(--gold); }
+  .nav-cv { font-family: var(--mono); font-size: 12px; color: var(--gold); border: 1px solid var(--gold-dim); padding: 7px 12px; text-decoration: none; cursor: pointer; background: none; }
+  .nav-cv:hover { background: var(--gold); color: var(--bg); }
+  @media (max-width: 720px) { nav .links { display: none; } }
+
+  /* ---- Hero ---- */
+  header.hero { padding: 64px 0 52px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+  header.hero::before {
+    content: ""; position: absolute; inset: 0; opacity: 0.5; pointer-events: none;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px; mask-image: linear-gradient(to bottom, black, transparent 85%);
+  }
+  .hero-grid { display: grid; grid-template-columns: 108px 1fr; gap: 30px; align-items: start; position: relative; }
+  @media (max-width: 620px) { .hero-grid { grid-template-columns: 1fr; } }
+  .avatar {
+    width: 108px; height: 108px; border: 1.5px solid var(--gold-dim); position: relative;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 34px; color: var(--gold); background: var(--bg-raised);
+  }
+  .avatar::before, .avatar::after { content: ""; position: absolute; width: 10px; height: 10px; border: 1px solid var(--gold); }
+  .avatar::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+  .avatar::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+  .eyebrow { font-family: var(--mono); font-size: 14px; color: var(--gold); margin: 0 0 10px; }
+  h1.name { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); margin: 0 0 8px; letter-spacing: -0.3px; }
+  .role-line { font-size: 16px; color: var(--ink-dim); margin: 0 0 18px; max-width: 60ch; }
+  .position-statement { font-family: var(--serif); font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: var(--ink); max-width: 62ch; margin: 0 0 24px; border-left: 2px solid var(--gold); padding-left: 18px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { font-family: var(--sans); font-weight: 600; font-size: 14px; padding: 12px 22px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-gold { background: var(--gold); color: #191008; }
+  .btn-gold:hover { background: #dbaf5f; }
+  .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .stat-row { display: flex; gap: 34px; margin-top: 30px; flex-wrap: wrap; }
+  .stat b { display: block; font-family: var(--mono); font-size: 22px; color: var(--gold); font-weight: 600; }
+  .stat span { font-size: 12.5px; color: var(--ink-dim); }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 30px; }
+  .sec-num { font-family: var(--mono); font-size: 13px; color: var(--gold-dim); }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: 26px; margin: 0; }
+  .sec-sub { color: var(--ink-dim); font-size: 14.5px; margin: -20px 0 30px; max-width: 60ch; }
+
+  /* ---- Services ---- */
+  .services-list { border-top: 1px solid var(--line); }
+  .svc-row { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .svc-row h3 { font-family: var(--serif); font-size: 17px; font-weight: 600; margin: 0; }
+  .svc-row p { margin: 0; color: var(--ink-dim); font-size: 14px; }
+  @media (max-width: 620px) { .svc-row { grid-template-columns: 1fr; gap: 6px; } }
+
+  /* ---- Experience / Projects ---- */
+  .timeline { position: relative; padding-left: 26px; border-left: 1px solid var(--line); }
+  .tl-item { position: relative; padding-bottom: 34px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before { content: ""; position: absolute; left: -30px; top: 4px; width: 9px; height: 9px; background: var(--bg); border: 1.5px solid var(--gold); }
+  .tl-date { font-family: var(--mono); font-size: 12px; color: var(--gold); margin-bottom: 4px; }
+  .tl-role { font-family: var(--serif); font-size: 18px; font-weight: 600; margin: 0 0 2px; }
+  .tl-org { font-size: 13.5px; color: var(--ink-dim); margin: 0 0 10px; }
+  .tl-desc { font-size: 14.5px; color: var(--ink); margin: 0; max-width: 68ch; }
+  .tl-desc + .tl-desc { margin-top: 6px; }
+
+  /* ---- Case studies ---- */
+  .cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  @media (max-width: 820px) { .cases { grid-template-columns: 1fr; } }
+  .case { border: 1px solid var(--line); padding: 22px; background: var(--bg-raised); }
+  .case .tag { font-family: var(--mono); font-size: 11.5px; color: var(--gold); margin-bottom: 10px; display: block; }
+  .case h3 { font-family: var(--serif); font-size: 17px; margin: 0 0 10px; }
+  .case p { font-size: 13.5px; color: var(--ink-dim); margin: 0 0 8px; }
+  .case .val { font-family: var(--mono); font-size: 13px; color: var(--ink); border-top: 1px solid var(--line); padding-top: 10px; margin-top: 12px; }
+
+  /* ---- Certifications ---- */
+  .certs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (max-width: 720px) { .certs { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .certs { grid-template-columns: 1fr; } }
+  .cert { background: var(--bg); padding: 20px; }
+  .cert .yr { font-family: var(--mono); font-size: 11.5px; color: var(--gold-dim); }
+  .cert h4 { font-family: var(--serif); font-size: 15px; margin: 6px 0 4px; }
+  .cert p { font-size: 12.5px; color: var(--ink-dim); margin: 0; }
+
+  /* ---- LinkedIn Insights ---- */
+  .insights-band { background: var(--bg-paper); color: var(--paper-ink); }
+  .insights-band .sec-num, .insights-band .eyebrow { color: var(--gold-dim); }
+  .insights-band h2 { color: var(--paper-ink); }
+  .insights-band .sec-sub { color: var(--paper-dim); }
+  .cci-mark { font-family: var(--mono); font-size: 12px; color: var(--gold-dim); border: 1px solid var(--line-paper); padding: 6px 12px; display: inline-block; margin-bottom: 24px; }
+  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 820px) { .posts { grid-template-columns: 1fr; } }
+  .post { background: #fff; border: 1px solid var(--line-paper); padding: 20px; }
+  .post .neq { font-family: var(--serif); font-size: 16px; font-weight: 600; margin: 0 0 10px; }
+  .post .neq .x { color: var(--gold-dim); font-weight: 400; }
+  .post p { font-size: 13px; color: var(--paper-dim); margin: 0; }
+  .insights-cta { margin-top: 30px; font-size: 14px; }
+  .insights-cta a { color: var(--gold-dim); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+
+  /* ---- Contact ---- */
+  footer#contact { padding: 64px 0 50px; border-bottom: none; }
+  .contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; }
+  @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-lede { font-family: var(--serif); font-size: 24px; line-height: 1.45; margin: 0 0 20px; max-width: 34ch; }
+  .contact-list { list-style: none; margin: 0; padding: 0; font-size: 14.5px; }
+  .contact-list li { padding: 12px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; }
+  .contact-list li:last-child { border-bottom: 1px solid var(--line); }
+  .contact-list span:first-child { color: var(--ink-dim); }
+  .contact-list a { text-decoration: none; }
+  .contact-list a:hover { color: var(--gold); }
+  .open-to { font-family: var(--mono); font-size: 12px; color: var(--gold); margin-top: 24px; }
+  .fine { text-align: center; font-size: 12px; color: var(--ink-dim); padding-top: 40px; }
+
+  #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--gold); color: #191008; font-size: 13px; font-weight: 600; padding: 10px 18px; opacity: 0; transition: all .25s ease; pointer-events: none; z-index: 50; }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Deepak Kumar Mishra <span>/ QS</span></div>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#services">Services</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cv" id="cvLink" download="Deepak_Kumar_Mishra_CV.pdf" href="#">Download CV</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="avatar">DM</div>
+    <div>
+      <p class="eyebrow">14+ YEARS · EPC &amp; FIDIC COMMERCIAL LEADERSHIP</p>
+      <h1 class="name">Deepak Kumar Mishra</h1>
+      <p class="role-line">14+ years across EPC &amp; FIDIC power, industrial and commercial projects · New Delhi, India · Open to relocation</p>
+      <p class="position-statement">I run the commercial side of large EPC and FIDIC contracts end to end — BOQ through final account — so that project leadership always knows where the money and the risk actually stand. Looking to take that ownership into a Manager – QS, Commercial Manager, or Cost Management mandate on a large infrastructure, industrial, or energy programme.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" id="cvLinkHero" download="Deepak_Kumar_Mishra_CV.pdf" href="#">Download CV (PDF)</a>
+        <a class="btn btn-outline" href="#contact">Get in touch</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/deepakmishra811/" target="_blank" rel="noopener">LinkedIn profile</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>14+ yrs</b><span>EPC &amp; FIDIC commercial delivery</span></div>
+        <div class="stat"><b>₹2,600+ Cr.</b><span>cumulative project value managed</span></div>
+        <div class="stat"><b>6</b><span>organisations, power to retail-scale EPC</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Experience</h2></div>
+    <p class="sec-sub">Commercial and QS leadership across FIDIC and EPC contracts in retail, infrastructure, power and manufacturing.</p>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-date">MAR 2025 — PRESENT</div>
+        <div class="tl-role">Assistant Manager – Commercial &amp; QS</div>
+        <div class="tl-org">Cemindia Projects Limited (formerly ITD Cementation India Ltd) · IKEA, Noida Meeting Place — FIDIC, ₹1,934 Cr.</div>
+        <p class="tl-desc">Leading commercial and QS functions for a commercial highrise comprising retail, office and hotel spaces: BOQ preparation, progressive client billing, cost control and cash flow monitoring under contractual guidelines.</p>
+        <p class="tl-desc">Driving vendor procurement, techno-commercial evaluation and work order issuance; running BIM-based quantity estimation that improved take-off accuracy and supported variation management.</p>
+        <p class="tl-desc">Handling end-to-end contract administration under FIDIC — notices, variation and change management, EOT &amp; delay analysis, and contract risk tracking — alongside dispute avoidance and resolution.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">AUG 2023 — MAR 2025</div>
+        <div class="tl-role">Senior Engineer – Quantity Surveyor</div>
+        <div class="tl-org">NCC Limited · India International Horticulture Market, Sonepat — EPC, ₹2,600 Cr.</div>
+        <p class="tl-desc">Owned quantity estimation, BOQ finalization and cost analysis on a large-scale EPC project; managed contract administration, vendor negotiations and procurement strategy.</p>
+        <p class="tl-desc">Ensured progressive client billing with clean financial documentation, keeping cash flow and schedule tightly aligned with contractual obligations.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">JUL 2019 — AUG 2023</div>
+        <div class="tl-role">Senior Engineer – PMG</div>
+        <div class="tl-org">K.E. Engineers Pvt. Ltd (formerly Kuber Enterprises) · Multiple Thermal Power Plants — TG Decks, FGD Units &amp; Chimneys (150m &amp; 275m), CHPs — ₹600 Cr.</div>
+        <p class="tl-desc">Led commercial and contract management across a ₹600+ Cr. multi-site power portfolio: billing, claims, cost control and financial reporting to senior management.</p>
+        <p class="tl-desc">Ran delay analysis and EOT submissions, negotiated rate analysis for extra items, and controlled high-value material reconciliation with zero financial leakages.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">SEP 2017 — JUL 2019</div>
+        <div class="tl-role">Engineer – Quantity Surveyor</div>
+        <div class="tl-org">Sumitomo Mitsui Construction Co. Group Japan (India Division) · NGK Spark Plugs, Bawal &amp; Suzuki Motor Gujarat, Becharaji</div>
+        <p class="tl-desc">Built detailed cost abstracts and project budgets; led tender analysis and vendor negotiation on two manufacturing EPC packages, aligning procurement with site schedules.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">JUL 2016 — SEP 2017</div>
+        <div class="tl-role">Engineer – Billing</div>
+        <div class="tl-org">Scenic Developers Pvt. Ltd. · Corporate Office, New Delhi</div>
+        <p class="tl-desc">Pioneered efficient client billing protocols and extra-claim submissions, protecting client relations and project margins.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">SEP 2012 — JUL 2016</div>
+        <div class="tl-role">Engineer – Civil</div>
+        <div class="tl-org">L&amp;T Construction (Larsen &amp; Toubro Ltd.) — Hero MotoCorp (Halol &amp; Jaipur), Wonder Cement &amp; JK Cement, Chittorgarh</div>
+        <p class="tl-desc">Executed large industrial projects including deep excavations, high-rise RCC, chimneys and silos up to 80+ m, and advanced formwork/slipform techniques — the site-level foundation the commercial career is built on.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Services</h2></div>
+    <p class="sec-sub">Available for full-time Manager-level roles and select freelance / remote QS engagements.</p>
+    <div class="services-list">
+      <div class="svc-row"><h3>Quantity Surveying &amp; BOQ</h3><p>Measurement, BOQ preparation and finalization, rate analysis for extra/substituted items.</p></div>
+      <div class="svc-row"><h3>Reinforcement BBS &amp; Detailing</h3><p>Bar bending schedules and reinforcement detailing coordinated against structural drawings.</p></div>
+      <div class="svc-row"><h3>End-to-End Contract Management</h3><p>FIDIC/NEC/EPC contract setup, notices, variation and change management, subcontract administration, dispute resolution.</p></div>
+      <div class="svc-row"><h3>EOT &amp; Delay Analysis</h3><p>As-planned vs as-built delay analysis, prolongation and disruption quantification, EOT submissions and entitlement protection.</p></div>
+      <div class="svc-row"><h3>Contract Risk Analysis</h3><p>Early risk identification against contract terms, obligation tracking and mitigation planning through delivery.</p></div>
+      <div class="svc-row"><h3>Billing &amp; Claims</h3><p>Progressive client billing, payment certification, EOT and delay-analysis claims, dispute avoidance.</p></div>
+      <div class="svc-row"><h3>Cost Management &amp; Budgeting</h3><p>Budget baselining, cost budgeting, cost control, cash flow forecasting, cost-value reconciliation.</p></div>
+      <div class="svc-row"><h3>Scheduling (P6 &amp; MS Project)</h3><p>Baseline and progress schedules in Primavera P6 and Microsoft Project, tracked against commercial milestones.</p></div>
+      <div class="svc-row"><h3>BIM 5D (QTO)</h3><p>Model-based quantity take-off and BIM coordination to tighten estimation accuracy and variation tracking.</p></div>
+      <div class="svc-row"><h3>Take-off Tools — CostX, Revit, SketchUp</h3><p>Digital take-off and model review using CostX, Revit and SketchUp alongside traditional measurement.</p></div>
+      <div class="svc-row"><h3>Project Management Support</h3><p>Commercial input into project controls — scope, schedule and cost tracked as one picture for leadership.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Featured Case Studies</h2></div>
+    <p class="sec-sub">A closer look at four engagements spanning mixed-use commercial, EPC infrastructure, power and industrial manufacturing.</p>
+    <div class="cases">
+
+      <div class="case">
+        <span class="tag">MIXED-USE COMMERCIAL / FIDIC · CURRENT</span>
+        <h3>IKEA Noida Meeting Place</h3>
+        <p>Commercial and QS lead on a ₹1,934 Cr. FIDIC contract — BOQ, progressive billing, cost control and cash flow, with BIM-based take-off supporting variation management.</p>
+        <p>Focus: vendor procurement, techno-commercial evaluation, and flagging budget-vs-actual risk to leadership early.</p>
+        <div class="val">Contract value: ₹1,934 Cr. · FIDIC</div>
+      </div>
+
+      <div class="case">
+        <span class="tag">INFRASTRUCTURE / EPC</span>
+        <h3>India International Horticulture Market, Sonepat</h3>
+        <p>Quantity estimation, BOQ finalization and cost analysis for a large-scale EPC infrastructure project with NCC Limited.</p>
+        <p>Handled contract administration, procurement strategy and progressive billing end to end through the delivery period.</p>
+        <div class="val">Contract value: ₹2,600 Cr. · EPC</div>
+      </div>
+
+      <div class="case">
+        <span class="tag">POWER / MULTI-SITE</span>
+        <h3>Thermal Power Plants — TG Decks, FGD &amp; Chimneys</h3>
+        <p>Commercial and contract management across three tall-structure power packages (150m &amp; 275m chimneys, FGD units, CHPs) for K.E. Engineers.</p>
+        <p>Delay analysis, EOT submissions and high-value material reconciliation, run with zero financial leakage across the portfolio.</p>
+        <div class="val">Portfolio value: ₹600+ Cr. · Multi-site</div>
+      </div>
+
+      <div class="case">
+        <span class="tag">INDUSTRIAL / MANUFACTURING</span>
+        <h3>Industrial &amp; Manufacturing Projects</h3>
+        <p>L&amp;T Construction: Hero MotoCorp (Halol &amp; Jaipur) and Wonder/JK Cement, Chittorgarh — deep excavations, high-rise RCC, chimneys and silos up to 80+ m.</p>
+        <p>Sumitomo Mitsui Construction: NGK Spark Plugs, Bawal and Suzuki Motor Gujarat, Becharaji — cost abstracts, tender analysis and procurement across two manufacturing EPC packages.</p>
+        <div class="val">Combined value: ₹697 Cr. · L&amp;T + Sumitomo</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Certifications</h2></div>
+    <div class="certs">
+      <div class="cert"><span class="yr">2024</span><h4>Member, Indian Institute of Quantity Surveyors (MIIQS)</h4><p>Professional membership, quantity surveying practice.</p></div>
+      <div class="cert"><span class="yr">2024</span><h4>Six Sigma Green Belt</h4><p>AIGPE — process improvement and quality methodology.</p></div>
+      <div class="cert"><span class="yr">2024</span><h4>Project Scheduling, Monitoring &amp; Control</h4><p>AIGPE — schedule development and progress control.</p></div>
+      <div class="cert"><span class="yr">2024</span><h4>Primavera P6</h4><p>Udemy — baseline and progress scheduling.</p></div>
+      <div class="cert"><span class="yr">2011</span><h4>AutoCAD</h4><p>Delhi Institute of Computer Science.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="insights" class="insights-band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2>LinkedIn Insights</h2></div>
+    <div class="cci-mark">CONSTRUCTION COMMERCIAL INTELLIGENCE — ongoing series</div>
+    <p class="sec-sub">Plain-language breakdowns of the commercial concepts that decide whether a claim survives or a bill gets paid — the distinction most sites and teams get wrong.</p>
+    <div class="posts">
+      <div class="post"><p class="neq">Variation <span class="x">≠</span> Claim</p><p>Why raising a variation and having an entitlement to payment are two different tests — and why teams conflate them.</p></div>
+      <div class="post"><p class="neq">BOQ <span class="x">≠</span> Payable Quantity</p><p>What actually gets certified for payment versus what's written in the Bill of Quantities, and where the gap opens up.</p></div>
+      <div class="post"><p class="neq">Work Done <span class="x">≠</span> Billing Possible</p><p>Physical progress on site doesn't automatically convert to a billable milestone — the commercial steps in between.</p></div>
+    </div>
+    <p class="insights-cta">Follow the full series on <a href="https://www.linkedin.com/in/deepakmishra811/" target="_blank" rel="noopener">LinkedIn</a> →</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="contact-lede">Hiring for a QS, Commercial Manager, or Cost Management role — or need part-time senior QS support on a live contract?</p>
+      <a class="btn btn-gold" id="cvLinkFooter" download="Deepak_Kumar_Mishra_CV.pdf" href="#">Download CV (PDF)</a>
+      <p class="open-to">OPEN TO: MANAGER — QS · COMMERCIAL MANAGER · COST MANAGEMENT · REMOTE / UK RELOCATION</p>
+    </div>
+    <ul class="contact-list">
+      <li><span>Phone</span><a href="tel:+917042598579">+91 70425 98579</a></li>
+      <li><span>Email</span><a href="mailto:welldeepakmishra@gmail.com">welldeepakmishra@gmail.com</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/deepakmishra811/" target="_blank" rel="noopener">deepakmishra811</a></li>
+      <li><span>Location</span><span>New Delhi, India</span></li>
+    </ul>
+  </div>
+  <p class="fine">Deepak Kumar Mishra — Commercial &amp; Contracts (QS)</p>
+</footer>
+
+<script>
+const CV_B64 = "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9Db250ZW50cyAxMCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA5IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago2IDAgb2JqCjw8Ci9Db250ZW50cyAxMSAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA5IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgOSAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0F1dGhvciAoXChhbm9ueW1vdXNcKSkgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MDkyNDA0NDkwNSswMCcwMCcpIC9DcmVhdG9yIChcKHVuc3BlY2lmaWVkXCkpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MDkyNDA0NDkwNSswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gXChvcGVuc291cmNlXCkpIAogIC9TdWJqZWN0IChcKHVuc3BlY2lmaWVkXCkpIC9UaXRsZSAoXChhbm9ueW1vdXNcKSkgL1RyYXBwZWQgL0ZhbHNlCj4+CmVuZG9iago5IDAgb2JqCjw8Ci9Db3VudCAyIC9LaWRzIFsgNSAwIFIgNiAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDI5MzEKPj4Kc3RyZWFtCkdhdTBFPj9CaCwmcTlSVmVDLHUzJG04LU9hRjYxLVcvUkkwWWgobEdeOWpTYipnOEcwU191MjtzN2ZPQ1NWMk5kM0Y2ZVYrZF9LKkllP15dSk5FY2trLl91PlM7dVJsZ10+SExuSiVLX1hUQEh0a2AkKyUqQjw7UzlySSwyKWtJPCVwMlIza0xcTWlxWHVVWCZkckpqbjtwPmVLVk5XWjM0YmRzNENVaTxSYm8vNDpFLVR0IiU4WC5ibEwyUjIqPVZlPmJJYHRBMGBEQz1KJ21PR245OjMnWFtZVS9ORmNqIT4vZ24uIyEkZDskRlEyW1pzLTgnMjs2KFsmKFBkOFZWPmdYUlcoN0dPY1RwISxWNGdBXVJqIlRRQCtDIV4tR2JTK11sQmMhPVcpS0FtRS86Y2w3L3VkV3Rrb2hvLVAvPT48JWstKyVRc3AxYG8yLmJ1ZnRIZmpNRS1ZYExcaiZGZStMPjImNzJxbz5RWmhXS0RwJmo2MCNKbCliImFeWjNTaCdPJz1pYSEtbzRAXmBlZjRTa0IwO1E+JE06Kk1AKmBdcjcuZVBKLCwxdXI3ISlDbUhnRV48YmtASi9aUTQ7LV5bREYpaWMwMF4mL2JjdDFjZk5WZmtQWyE5KXRhI2lbTWIxQ3RvdWw5bnRmNTEtLy9SKTJFRkZrUGFgJ2xTYy8+YyRjOiVcQCZjJVZPJ2ZaaypeSl4vWC4mLG43WWwtNSlGTkVvIlcidTFTb1p1OG5yNEtQIXAlUlFkbD48cSNoSyhNNXB1PkJUaFJdVG87VFVnUylCSjkyQ0NYV1lqVFZwaTMjZi88cChTMHJuYSlKY2w2JyRdJCwkRHNrRUNcRm9cV2tVTlJBWS8rZWY4VllTSE0/IlxsV2ovWWIjUFxwLUtndCphN2tyZjJEQ10pbG9fJk1gNz4wImNAQmtua0tiZzJQNVY4OUEqXmtOXTJsZyR1NSNtc1luL0todFFqMyxcQGFBSzUhTG5gZF9TcWNQQGtALVAtOjJTI1pfIVdHPV5AOmleLGdUKmFCITQzTF06XCItJFxNQiQ7Pl1bPFtgaC8ua1BpSEhGTXAuLio4Kj5mdDsoVEsnKCVCXUYnT2ssW1Vca1cpNSgtNWkwT21EPjNiLCNKTC1JSFsiTkxXJ3AyN08scyNdWU00PWluaWs3RDF1PkEuRyFdXDhtSi9APFtWR3RcY15gXlYnQkU9dURpO2JnKC8/YlQ6KUVOQyVXMG9kOldGWmRmPiMrODE3QFlsP2kvJyNwRVUyJD9EbVJBWl9YOlsuKnAwbmNVYUlEKEstc1tAUEdnb2BpdFo0YEomYEFTJGZoTyldPWMxKlwsWlNhVkJHOlgkaUk5XSVtMUZYWiUwa0RmOENSRDZFTVgyci03MmlqbnJMYEckJmMiVys4VFE3NDFgaGBBY0FhSiRnV0JkJiZBXmxNQERKb1xmRjAlQXUiRkQ9VWglJSsxZC10NVRBcW5vQzRwaXMjcHJxTUZpYCMuLlJSdGQ1YWtXNTxqSWs+KjU+TWlYKkJsVHFzZzw1RTdLaGdJPWxDQ280N1olTSkhT2xjJiRsSXNJI2ptX1JnMnNbZXBQME5MTilULiQzMGZOVTVidE88SidFQUhlWFxNaiUlLVZLOD9DVURJPF5RRU1KZFtwPjE2dSo9bVAvPUZicj91SC0kRXBeM0E7dTlXKVtPLT1sTEVVVlpfI1BLOjQ1Slk8L00hRTFkXF1KJlk5SWZdNSFLZ05ZTUctaFE/JjYqTmRoNGk5US9AXygtTz5STFJBTCxYY1VmS2ZOUzJZcyQ9LkxXPVRqTDQ/ZWsucClbPitkcWhmMzokLzRtYCppWEdacjsxS0VsOWE2OT8lOSxgRTprUC80bzEybWlePyFlRC8tbzV1aVxNSGJPQDZzV1VqPDBDY2tYK1NLW3R0NTR0a3EhNEtAamlKc1M0XjJnVjFsUyw4JGtRZGJwVlYpLGxsRy9EbCtESSVpQFRKb2JFS11rMk82MD1zKlIoa0M4bCIlJlxiIixibUFYdVg/LXRVV3FwKDchMDBSJ2JIYlFsViNPRXFNSFVXaDVlT1dibmk1b3E+YDJSUyhlWW5AV0VWPyoxMltdMyUuck1ZUl0iXiRVZGwrJ29cMSInZE40SmhydEdiPEY8P0EsP0slLjBbTmdgOldoZSpVYFE/VUVsTj84aGQwYT5UJFQrIUosIi4+PkxLVXMvQG1ebFclb2dJRTswSkJKNGwjbkpZVj4lJlR1Si5pNzhpN2tCQGxMZSdFST9NZVtdS1EtP01EbkIyXSY/dG5yYjslPDQ3cGdlWDIkV0M6RDZeSjNHZ0I4SFdCcW9hQ2dBQzNVIW1GS0JtbU9camNVcGchZFlJVTY8QFwxVDJrYVlkcDdMNyZhNUdbNj4wSyxFNGBZP0tkO2ojLDVLbyJyL0l1YEw4ITVAO0o1UzhNRUxkZSF1Km04bTZHYDErKSMxXUA0XVohZmMwc0BNX15DZVUiWSQ6KD4qUD5RYSY0NzhlQXE0RS1JPGVcIi44akxQYStvVU9yaXAsSiRqNWZzKGg2UyxHR2BjSjpMTjVDWVxGIT8zNVM7c1cwJF8wb2c4JlkpbE1fayxJXSlnLydoNzNlOV47PjQsU1J0JScxTidmQmhMRFhtcE1yZjsmU0s3XGJrRUFKPl1EZm9VTmhNVlk8MF5PIUgkXTwnZHFgdTBzQXA/Kl5bSGVfOCc1S10rP2ltVkVVOHJPRkoiRFRHY29OMlw6cXRdRkp1Wk9eMi1rOmE0MD86VzAoPERtcmskKkl1STVgTXJAWTdKbHA2S0ohKmQ+ZmY+Kiw4R0lBQV1oZlNxaF9QMl91KGVNTTlCXlJbVyhMSDxyV2tFL1VPNjk+cGcuK1o7WkNzIlpGRSM1NldyNCZCU0JDWC1eKTFoaExKJj0/Ji05JFE7UllCPiJHX1AiRC07UDVlITUhTFhFRFhDYkJwOTouSnU7cWBvW15eOltWPDZYLVksQiVMLkQ1LjRPUmdeU08mQThdQkBDQkJ0J1tFa19fMWUmbyFrdHVFTVwqS09kNW8wWkxMT0VrUVgvY0FSR1EzLSdvWGg/TywxYHIlLEhFVVQhMWBvV11LZmhvX3NHY3JDSiU2RWNialVFMDonb0U+Mz8yPVVVOj5NWSlJI1xRT0AhKEJoV21sZGxRMDlBIVNONEwwMGNGImQpLjtpYFhIIVJLRVJLPTVcVzs/aydmJzw0L04rMHIjViciUjZISWlgaTRzK25xLj5RSUduaCgjX14/a1lNRGQ2IT5fVkFbKEVDYWcqRyNeRzNUYiNGcVxyXUh1PSdCbyhVRHBoRUFic0M1ViMoJ21sZV4rMChpKEgtPEBLODlcQHNhREVFMFxbKEkjOlttclUqWidxakpWSW1QW29nZ1wnQlYsc0xsYisjPVNuPkxJb0RtYEs0dWZNYTs9X2hrTnFmUENpKERvbHExWkA2WGtOY1ZWMFxRUzBgMFlsTjlMQFpXbic7YmFnYExeWCxdS0omSSlqUy0yWmNkSGhXbzZucjRaSTVjUFxnJj1gSWwlRzw1KjkycV47L19BbG9rXTk8XXFdWTNnZXJfRVQjWXA4XCMtQ1NpcWRbZy1FMjQ8VD9QXUlWSSkzaEEoRXFrMjBGLGwwdVlMSmVdNlxuJEFmPzFSR1gvLnRCbV5qaS8yNGhML1c9MEMhMyQ0Uk0jRyx1UVtvNVsiOWg8N0VWPztbTWZUWzBgZ3MlJFBscyJJJTNtZFUmZms1Km8waD1AP1hkWzZhbT5AdEw7TClcVUMjQyJ1ViVLWWYmRmVoR0tGbyFUWihvTi5uQGN1WGpQNGghL05AJEdDZGAxTDUlYEV0NWZQT1hZLnNYbVtpU10yS0ZRW1R+PmVuZHN0cmVhbQplbmRvYmoKMTEgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggNjYyCj4+CnN0cmVhbQpHYXRtNzlvbiFeJkFAWmNrMHVeNFY6YlRxLEQ8OlkiR0wtZUhmQUtJIjVZQFpGV0B1VHFWc1hcUGpZaVlNQ04tXzFKJ18jcjgqblNraSplQUheaypGLFBYO0g1VV0kOStMWXVPMWs/Y2FyRmg+Ujo1PjQmQHA5Xm4/SSpeSWBCKnA1XHFHPTIiL2JKWUNsPGc4L1ZqJTo6biY2byxVWEUxOzIsVnIjV1kvcylQQSswKnJTQT1jRyJFREhBOldWJT0rJCMnIStgNF83by9OUjluXj89RVZyWTdjMVJmJjxoMy1oXi5gY2ctQyF1N1FmTkdpLz45PitpbFNkaz9OamsiM15ETjwoMlouWjMqYGw/J28kRi5lXkUnLV1xQUVhMTk0NDBpSzkpLyFeL1Q6PmMnJCI5QC9QOjBpW1xHNktfVV4qVSVIZlZMPzUoUmBmYSMtKS41L15rWCMxOUVCak9HaGMsIT0zKU9lI2ctcVZWPyVBJjorTCFnOmMwXXBxXTwzTmwsSHEoQjtCdDRtc1VBQyZeRG5TRlVMOFBsWTxiI2FTc0tbKllaMytQMVI+WjVmSmQ9SG1SSC8jYGpxKiZRRzclI3NTaDZHMjZhYVZgZV5jPnNpbjwjW0xzbiloST5jRksrYTRQJGBtW2xjKjxGTlhCcls2OWVjZC42LE8taChdTVB0WEYtK3U2VWlNU1woKmklYTFuRmdiZFZDP1o2dWBtTnMuRkY5TUQwTkU/J189TyVkJVQnVldBRCtMW0lFL3Blbz9oQTRcXS9VM14jY0c9J14zNiVjJ3RcZ1BxOyEiVCxfV1EwNDs0cE1qV05RI1pTLjBROVM2akBKRXEiS0dXUClKYVw6VmlydVJCQ1sjL0Z+PmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDEyCjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDA2MSAwMDAwMCBuIAowMDAwMDAwMTEyIDAwMDAwIG4gCjAwMDAwMDAyMTkgMDAwMDAgbiAKMDAwMDAwMDMzMSAwMDAwMCBuIAowMDAwMDAwNDQ2IDAwMDAwIG4gCjAwMDAwMDA2NTAgMDAwMDAgbiAKMDAwMDAwMDg1NCAwMDAwMCBuIAowMDAwMDAwOTIyIDAwMDAwIG4gCjAwMDAwMDEyMDIgMDAwMDAgbiAKMDAwMDAwMTI2NyAwMDAwMCBuIAowMDAwMDA0MjkwIDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDYzZjU4MWE1YzJiNzY4YzZmOTY2ODFkZGIwYWE4Mzc2Pjw2M2Y1ODFhNWMyYjc2OGM2Zjk2NjgxZGRiMGFhODM3Nj5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gOCAwIFIKL1Jvb3QgNyAwIFIKL1NpemUgMTIKPj4Kc3RhcnR4cmVmCjUwNDMKJSVFT0YK";
+function wireDownloadLinks() {
+  const dataUrl = 'data:application/pdf;base64,' + CV_B64;
+  ['cvLink', 'cvLinkHero', 'cvLinkFooter'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('href', dataUrl);
+  });
+}
+wireDownloadLinks();
+</script>
+
+</body>
+</html>
