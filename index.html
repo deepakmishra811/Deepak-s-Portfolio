@@ -62,10 +62,11 @@
   @media (max-width: 620px) { .hero-grid { grid-template-columns: 1fr; } }
   .avatar {
     width: 108px; height: 108px; border: 1.5px solid var(--gold-dim); position: relative;
-    display: flex; align-items: center; justify-content: center;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
     font-family: var(--serif); font-size: 34px; color: var(--gold); background: var(--bg-raised);
   }
-  .avatar::before, .avatar::after { content: ""; position: absolute; width: 10px; height: 10px; border: 1px solid var(--gold); }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .avatar::before, .avatar::after { content: ""; position: absolute; width: 10px; height: 10px; border: 1px solid var(--gold); z-index: 2; }
   .avatar::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
   .avatar::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
   .eyebrow { font-family: var(--mono); font-size: 14px; color: var(--gold); margin: 0 0 10px; }
@@ -94,6 +95,16 @@
   .svc-row h3 { font-family: var(--serif); font-size: 17px; font-weight: 600; margin: 0; }
   .svc-row p { margin: 0; color: var(--ink-dim); font-size: 14px; }
   @media (max-width: 620px) { .svc-row { grid-template-columns: 1fr; gap: 6px; } }
+
+  .svc-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start; }
+  @media (max-width: 820px) { .svc-tiles { grid-template-columns: 1fr; } }
+  .svc-tile { border: 1px solid var(--line); background: var(--bg-raised); padding: 26px; }
+  .svc-tile .tile-num { font-family: var(--mono); font-size: 12px; color: var(--gold-dim); display: block; margin-bottom: 8px; }
+  .svc-tile h3.tile-head { font-family: var(--serif); font-size: 20px; font-weight: 600; margin: 0 0 18px; color: var(--gold); }
+  .svc-item { padding: 14px 0; border-top: 1px solid var(--line); }
+  .svc-item:first-of-type { border-top: none; }
+  .svc-item h4 { font-family: var(--serif); font-size: 14.5px; font-weight: 600; margin: 0 0 4px; color: var(--ink); }
+  .svc-item p { margin: 0; font-size: 13px; color: var(--ink-dim); line-height: 1.5; }
 
   /* ---- Experience / Projects ---- */
   .timeline { position: relative; padding-left: 26px; border-left: 1px solid var(--line); }
@@ -175,7 +186,7 @@
 
 <header class="hero">
   <div class="wrap hero-grid">
-    <div class="avatar">DM</div>
+    <div class="avatar"><img src="deepak-mishra.jpg" alt="Deepak Kumar Mishra"></div>
     <div>
       <p class="eyebrow">14+ YEARS · EPC &amp; FIDIC COMMERCIAL LEADERSHIP</p>
       <h1 class="name">Deepak Kumar Mishra</h1>
@@ -255,18 +266,34 @@
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">02</span><h2>Services</h2></div>
     <p class="sec-sub">Available for full-time Manager-level roles and select freelance / remote QS engagements.</p>
-    <div class="services-list">
-      <div class="svc-row"><h3>Quantity Surveying &amp; BOQ</h3><p>Measurement, BOQ preparation and finalization, rate analysis for extra/substituted items.</p></div>
-      <div class="svc-row"><h3>Reinforcement BBS &amp; Detailing</h3><p>Bar bending schedules and reinforcement detailing coordinated against structural drawings.</p></div>
-      <div class="svc-row"><h3>End-to-End Contract Management</h3><p>FIDIC/NEC/EPC contract setup, notices, variation and change management, subcontract administration, dispute resolution.</p></div>
-      <div class="svc-row"><h3>EOT &amp; Delay Analysis</h3><p>As-planned vs as-built delay analysis, prolongation and disruption quantification, EOT submissions and entitlement protection.</p></div>
-      <div class="svc-row"><h3>Contract Risk Analysis</h3><p>Early risk identification against contract terms, obligation tracking and mitigation planning through delivery.</p></div>
-      <div class="svc-row"><h3>Billing &amp; Claims</h3><p>Progressive client billing, payment certification, EOT and delay-analysis claims, dispute avoidance.</p></div>
-      <div class="svc-row"><h3>Cost Management &amp; Budgeting</h3><p>Budget baselining, cost budgeting, cost control, cash flow forecasting, cost-value reconciliation.</p></div>
-      <div class="svc-row"><h3>Scheduling (P6 &amp; MS Project)</h3><p>Baseline and progress schedules in Primavera P6 and Microsoft Project, tracked against commercial milestones.</p></div>
-      <div class="svc-row"><h3>BIM 5D (QTO)</h3><p>Model-based quantity take-off and BIM coordination to tighten estimation accuracy and variation tracking.</p></div>
-      <div class="svc-row"><h3>Take-off Tools — CostX, Revit, SketchUp</h3><p>Digital take-off and model review using CostX, Revit and SketchUp alongside traditional measurement.</p></div>
-      <div class="svc-row"><h3>Project Management Support</h3><p>Commercial input into project controls — scope, schedule and cost tracked as one picture for leadership.</p></div>
+    <div class="svc-tiles">
+
+      <div class="svc-tile">
+        <span class="tile-num">01</span>
+        <h3 class="tile-head">Quantity Surveying</h3>
+        <div class="svc-item"><h4>Quantity Surveying &amp; BOQ</h4><p>Measurement, BOQ preparation and finalization, rate analysis for extra/substituted items.</p></div>
+        <div class="svc-item"><h4>Reinforcement BBS &amp; Detailing</h4><p>Bar bending schedules and reinforcement detailing coordinated against structural drawings.</p></div>
+        <div class="svc-item"><h4>BIM 5D (QTO)</h4><p>Model-based quantity take-off and BIM coordination to tighten estimation accuracy and variation tracking.</p></div>
+        <div class="svc-item"><h4>Take-off Tools — CostX, Revit, SketchUp</h4><p>Digital take-off and model review using CostX, Revit and SketchUp alongside traditional measurement.</p></div>
+      </div>
+
+      <div class="svc-tile">
+        <span class="tile-num">02</span>
+        <h3 class="tile-head">Contract Management</h3>
+        <div class="svc-item"><h4>End-to-End Contract Management</h4><p>FIDIC/NEC/EPC contract setup, notices, variation and change management, subcontract administration, dispute resolution.</p></div>
+        <div class="svc-item"><h4>EOT &amp; Delay Analysis</h4><p>As-planned vs as-built delay analysis, prolongation and disruption quantification, EOT submissions and entitlement protection.</p></div>
+        <div class="svc-item"><h4>Contract Risk Analysis</h4><p>Early risk identification against contract terms, obligation tracking and mitigation planning through delivery.</p></div>
+        <div class="svc-item"><h4>Billing &amp; Claims</h4><p>Progressive client billing, payment certification, EOT and delay-analysis claims, dispute avoidance.</p></div>
+        <div class="svc-item"><h4>Cost Management &amp; Budgeting</h4><p>Budget baselining, cost budgeting, cost control, cash flow forecasting, cost-value reconciliation.</p></div>
+      </div>
+
+      <div class="svc-tile">
+        <span class="tile-num">03</span>
+        <h3 class="tile-head">Planning</h3>
+        <div class="svc-item"><h4>Scheduling (P6 &amp; MS Project)</h4><p>Baseline and progress schedules in Primavera P6 and Microsoft Project, tracked against commercial milestones.</p></div>
+        <div class="svc-item"><h4>Project Management Support</h4><p>Commercial input into project controls — scope, schedule and cost tracked as one picture for leadership.</p></div>
+      </div>
+
     </div>
   </div>
 </section>
